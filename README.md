@@ -1,143 +1,82 @@
-<div align="center">
+# GiveForGood
 
-**Repository note:** This is a collaborative student project. No root project license file is currently present; do not assume a license from the old badge.
-<div align="center">
-<img align="center" src="https://github.com/Revanthk08/GiveForGood/blob/master/assets/Group%2013.png" width="20%"/>
-</div>
-<h1 align="center"> Give for Good </h1>
+**A collaborative Flutter/Firebase mobile-app prototype for connecting surplus food with people and communities who can use it.**
 
-<p align="center">Give for Good is a cross platform application that offers a user-friendly platform for individuals and businesses to donate excess food to nearby charities and community groups. The app allows user to raise a request in the app letting other users know about the locations where food is needed. The users can provide excess food over there preventing food from being wasted. We also facilitate formation of communities where group of people can join and participate in good deeds for others. Organizations can login using their oragnization name with a valid government proof. They can have fund raising requests for events conducted by them.</p>
+Built as a student team project, GiveForGood explores how individuals, groups and organizations might coordinate food donations, community requests and local action through one mobile experience.
 
-<h2>Video Submission</h2>
+**At a glance:** Flutter · Dart · Firebase Auth / Firestore / Storage · UI/UX · collaborative product development
 
-The link for our project demo can be found here👇👇👇
+**Quick links:** [Demo video](https://www.youtube.com/watch?v=mhJpTKpHa2I) · [Design preview](#design-preview) · [Engineering case study](docs/CASE_STUDY.md) · [How to run](#local-setup) · [Team](#team--attribution)
 
-<a href="https://www.youtube.com/watch?v=mhJpTKpHa2I">
-<img src="https://i.ytimg.com/vi/mhJpTKpHa2I/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXEtrzxhUu6FQKGCJPdfuNDRNQvA" width="500px">                                                                                
-</a>
+## The problem
 
-<h2>Project Info</h2>
-<div align="left">
+When usable food and willing donors exist but information is scattered, organizing support becomes harder. The proposed experience brings donation requests, community discovery and organizational participation into the same mobile workflow.
 
+## What the prototype explores
 
-The contents in this project follow the following structure, where all views are containerised into screens.
+- Donor and organizational entry flows, with phone authentication code and Firebase integration in the repository.
+- Exploration, community and request screens for food-sharing interactions.
+- Profiles and reusable UI elements across the Flutter application.
+- Prototype concepts for organization-led requests and community coordination.
 
-```
-├───models
-├───provider
-├───resuable
-├───screens
-│   ├───alert
-│   ├───community
-│   ├───explorePage
-│   ├───HomePage
-│   ├───Login
-│   ├───Profile
-│
-└───utils
-```
+**Scope:** These are repository-backed *prototype workflows*. The code and design files do not establish a launched donation network, verified nonprofit partnerships, secure identity-verification process, completed payments or measured social impact.
 
-Each individual screen in the above, follow this structure
+## Design preview
 
-```
-screen
-  ├──reusable_widgets
-  └──filename.dart
+Images are tracked design assets, not claims of a published store release.
+
+| Home | Community | Request flow |
+| --- | --- | --- |
+| ![GiveForGood home concept](Design/homepage.png) | ![GiveForGood community concept](Design/Communitiespage.png) | ![GiveForGood request concept](Design/requestraisepage.png) |
+
+Additional concepts are available in [`Design/`](Design/). Watch the [student project demonstration](https://www.youtube.com/watch?v=mhJpTKpHa2I).
+
+## Technical overview
+
+```text
+Flutter screens -> Provider/state and reusable widgets -> Firebase services
+       |                             |
+  user journeys                auth / Firestore / storage
+       |
+  assets + Poppins typography
 ```
 
-#### Constants
-This project uses 'Popins' as it's primary font. All the fonts have been pre-imported.
+- `lib/screens/`: login, home, explore, community, request/alert and profile views.
+- `lib/provider/auth_provider.dart`: Firebase phone-auth and locally persisted UI sign-in preference.
+- `lib/models/` and `lib/resuable/`: data models and shared visual components.
+- `pubspec.yaml`: Flutter dependencies and bundled assets.
 
-Moreover, here are a few constants which are used throughout the project, and have been added within a **CodeRedColors** class, use them accordingly.
+**Engineering decisions and limitations** are discussed in the [case study](docs/CASE_STUDY.md).
 
-```
-base            : ED413E
-primary         : FFFFFF
-primaryAccent   : 9A9A9A
-primary2        : ED413E
-primary2Accent  : A4A4A4
-inputFields     : F1F1F1
-text            : 000000
-textSecondary   : 9A9A9A
-```
-</div>
+## Local setup
 
-<h2>Designs</h2>
+This is an **older Flutter project** with Dart constraint `>=2.19.3 <3.0.0`. It is **not verified** on current Flutter releases, and Firebase project access is required for service-backed features.
 
-All the design/mockups for the app have been added in the `designs` directory. You can use those for reference.
-<img align="center" src="https://github.com/Revanthk08/GiveForGood/blob/master/Design/Group%2013.png" />
-
-
-<h2>Key Features</h2>
-<b>Food donation:</b> Easily donate surplus food to local charities and community groups.<br>
-<b>Community creation:</b> Create communities to distribute food to those in need as an organisation.<br>
-<b>Progress:</b> One can know the prgress of donation and completion status.<br>
-<b>Raise Request:</b> To know how many adults and children are in need of food.<br>
-<b>Fundraising:</b> To raise funds to organise food donation events.<br>
-<b>Profile creation:</b> Create a profile to offer services and support the cause.<br>
-
-<h2>Technology Stack</h2>
-<b>Flutter:</b> Cross-platform framework for mobile app development<br>
-<b>Firebase:</b> Backend infrastructure for authentication, database, and storage<br>
-<b>Google Maps platform:</b> Google maps API for map related tasks<br>
-<b>GooglePay :</b> payment services provided by Google<br>
-
-## Setup
-<div align ="left">
-
-  ##### Clone the repository
 ```bash
-git clone https://github.com/Revanthk08/GiveForGood.git
-```
-  ##### Move to the desired folder
-```bash
+git clone https://github.com/dvkkishore/GiveForGood.git
 cd GiveForGood
-```
-  ##### Download the dependencies
-```bash
 flutter pub get
-```
-
-  ##### Run the Flutter app (legacy SDK compatibility required)
-```bash
 flutter run
 ```
 
-</div>
-<h2>About</h2>
-We are a peer group from GDSC VelTech. Innovation shouldn't come at the cost of excessive resources, and we're proud to have created a product that demonstrates this. We believe that no one should have to go hungry, and we're committed to making a difference in our community. We invite everyone to join us in our mission to promote sustainable practices and combat hunger.<br><br>
+Use an appropriate compatible SDK; validate platform-specific setup, Firebase ownership and security rules before trying to run or redistribute the app. A successful source-consistency check is **not** a verified mobile build.
 
+## Team & attribution
 
+This is a collaborative GDSC VelTech project. The existing README credits the following GitHub collaborators, preserved here:
 
-<img src = "https://github.com/Revanthk08/GiveForGood/blob/master/Design/created-by-_developers_.svg"></img>
+- [Revanthk08](https://github.com/Revanthk08)
+- [sasankpenugonda](https://github.com/sasankpenugonda)
+- [dvkkishore](https://github.com/dvkkishore)
+- [Praneeth2kp](https://github.com/Praneeth2kp)
 
+**Individual contributions are not broken down in the tracked project documentation.** Avoid assigning a specific implementation or design feature to one member without confirmation from the team.
 
-<p>
-<a href="https://github.com/Revanthk08"><img width="128px" src="https://avatars.githubusercontent.com/u/85727301?s=400&u=05fcbd13ada32147edfae143fcf4aecec50f113b&v=4"></a><a href="https://github.com/sasankpenugonda"><img width="128px" src="https://avatars.githubusercontent.com/u/81469295?v=4"></a><a href="https://github.com/dvkkishore"><img width="128px" src="https://avatars.githubusercontent.com/u/72384182?v=4"></a><a href="https://github.com/Praneeth2kp"><img width="128px" src="https://avatars.githubusercontent.com/u/111587118?v=4"></a>
-</p>
-<h2></h2>
-To get aquainted with the flutter and firebase,the online documentation , tutorials, samples, and guidance on mobile development and also a full API reference the links are given below
+## Responsible reuse
 
-<br><br>
+- `android/app/google-services.json` is client configuration, **not** permission to use another organization's backend; Firestore/Storage security rules must be checked independently.
+- A saved login flag is **not equivalent** to server-authorized Firebase authentication.
+- No root LICENSE file was identified in the repository. Do not assume an MIT or other redistribution license; clarify rights with all collaborators before distributing a derivative.
+- The original screenshots, logo assets, and demonstration materials may have separate ownership or licensing restrictions.
 
-[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev/)
-[![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
-
-</div>
-
-
-## Compatibility and maintenance notes
-
-- This repository was built on a **legacy Flutter/Dart 2.x** dependency stack. The manifest requires Dart `>=2.19.3 <3.0.0`; a current Flutter SDK is not guaranteed to resolve or build this app. Choose a compatible Flutter release and validate plugins before upgrading.
-- Firebase configuration and backend services need to be managed by an authorized project owner. Public client configuration is **not** a substitute for Firestore/Storage security rules. Do not assume the app is deployed or backend access is configured.
-- The local `SharedPreferences` sign-in flag is a UI preference, **not proof of Firebase authentication**. Production access must rely on Firebase Auth and server-side security rules.
-- Asset paths in `pubspec.yaml` use forward slashes so the manifest is portable across platforms.
-- This repository retains the original team attribution and demo links above. A clear redistribution license should only be added after all rights holders agree.
-
-### Offline repository checks
-
-```bash
-python3 -m unittest discover -s tests -v
-```
-
-These tests check repository consistency without requiring a Flutter runtime or Firebase account. They do **not** establish that the mobile application builds or works end-to-end.
+For architectural decisions, evidence and caveats, see the [technical case study](docs/CASE_STUDY.md).

@@ -1,6 +1,6 @@
 <div align="center">
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Repository note:** This is a collaborative student project. No root project license file is currently present; do not assume a license from the old badge.
 <div align="center">
 <img align="center" src="https://github.com/Revanthk08/GiveForGood/blob/master/assets/Group%2013.png" width="20%"/>
 </div>
@@ -91,14 +91,14 @@ git clone https://github.com/Revanthk08/GiveForGood.git
 ```
   ##### Move to the desired folder
 ```bash
-cd \GiveForGood
+cd GiveForGood
 ```
   ##### Download the dependencies
 ```bash
 flutter pub get
 ```
 
-  ##### To run the app, simply write
+  ##### Run the Flutter app (legacy SDK compatibility required)
 ```bash
 flutter run
 ```
@@ -125,3 +125,19 @@ To get aquainted with the flutter and firebase,the online documentation , tutori
 
 </div>
 
+
+## Compatibility and maintenance notes
+
+- This repository was built on a **legacy Flutter/Dart 2.x** dependency stack. The manifest requires Dart `>=2.19.3 <3.0.0`; a current Flutter SDK is not guaranteed to resolve or build this app. Choose a compatible Flutter release and validate plugins before upgrading.
+- Firebase configuration and backend services need to be managed by an authorized project owner. Public client configuration is **not** a substitute for Firestore/Storage security rules. Do not assume the app is deployed or backend access is configured.
+- The local `SharedPreferences` sign-in flag is a UI preference, **not proof of Firebase authentication**. Production access must rely on Firebase Auth and server-side security rules.
+- Asset paths in `pubspec.yaml` use forward slashes so the manifest is portable across platforms.
+- This repository retains the original team attribution and demo links above. A clear redistribution license should only be added after all rights holders agree.
+
+### Offline repository checks
+
+```bash
+python3 -m unittest discover -s tests -v
+```
+
+These tests check repository consistency without requiring a Flutter runtime or Firebase account. They do **not** establish that the mobile application builds or works end-to-end.
